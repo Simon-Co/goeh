@@ -11,7 +11,6 @@ import (
 
 var (
 	ErrList = errors.New("Error List")
-	ErrTest = errors.New("Test Error")
 )
 
 type GoehErr struct {
@@ -85,6 +84,7 @@ type GoehErrList struct {
 	List []*GoehErr
 }
 
+//
 func (ael *GoehErrList) AddErr(e error) {
 	ae := ParseToDepth(e, 3)
 	ael.Mu.Lock()
